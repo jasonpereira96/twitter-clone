@@ -1,7 +1,7 @@
 <template>
     <div class='side-item to-follow'>
         <div class='to-follow-image-wrapper'>
-            <img src='./../assets/train.jpg' class='circle' />
+            <img src='./../../../assets/train.jpg' class='circle' />
         </div>
         <div class="to-follow-body">
             <div class='to-follow-content'>

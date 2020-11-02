@@ -1,13 +1,13 @@
 <template>
     <section class='side-box'>
         <div class='side-header'>
-            What's happening
+            {{type === 'happening' ? "What's happening" : "Who to follow"}}
         </div>
         <div v-if="type === 'happening'">
-            <HappeningItem v-for="(item, index) in items" :data="item" :key="index"/>
+            <HappeningItem v-for="(item, index) in items" :key="index" :itemData="item"/>
         </div>
         <div v-else>
-            <FollowItem v-for="(item, index) in items" :data="item" :key="index"/>
+            <FollowItem v-for="(item, index) in items" :key="index" :itemData="item"/>
         </div>
         <div class='side-footer'>
             Show more

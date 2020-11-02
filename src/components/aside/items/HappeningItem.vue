@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class='side-item-image-wrapper'>
-            <img class='side-item-image' src='./../assets/train.jpg' />
+            <img class='side-item-image' src='./../../../assets/train.jpg' />
         </div>
     </div>
 </template>

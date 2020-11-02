@@ -2,7 +2,7 @@
     <div id='right-section'>
         <div id='search-box'>
             <div class='mag-glass-wrapper'>
-                <svg viewBox="0 0 24 24" class="r-1re7ezh r-4qtqp9 r-yyyyoo r-1xvli5t r-dnmrzs r-18qmn74 r-1hfyk0a r-bnwqim r-1plcrui r-lrvibr">
+                <svg viewBox="0 0 24 24">
                     <g>
                         <path
                             :d="svg.search.path">
@@ -14,8 +14,8 @@
                 <input id='search-input' placeholder="Search Twitter" />
             </div>
         </div>
-        <SideBox type="happening" :itemData="follow"/>
-        <SideBox type="follow" :itemData="happening"/>
+        <SideBox type="happening" :items="happening"/>
+        <SideBox type="follow" :items="follow"/>
     </div>
 </template>
 
