@@ -1,28 +1,413 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Navbar/>
+    <MainSection/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Navbar from './components/navigation/Navbar.vue';
+import MainSection from './components/MainSection.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Navbar,
+    MainSection
   }
-}
+};
 </script>
 
 <style>
+html, body, #app {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background-color: white;
+    -ms-overflow-style: scrollbar;
+    overflow-y: scroll;
+    overscroll-behavior-y: none;
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  display:flex;
+}
+
+::-webkit-input-placeholder {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+}
+
+svg {
+    fill: rgba(29, 161, 242, 1.00);
+}
+
+.light {
+    font-weight: normal;
+    color: rgb(101, 119, 134);
+}
+
+.circle {
+    border-radius: 50%;
+}
+
+header {
+    flex: 1;
+    overflow-y: auto;
+    position: relative;
+}
+#header-icon-wrapper {
+  padding: 10px;
+}
+#header-icon-wrapper>svg {
+    height: 30px;
+    width: 47px;
+}
+
+.nav-item {
+    display: flex;
+    padding: 10px;
+}
+
+.nav-svg-wrapper {
+    flex: 1;
+}
+
+.nav-item-text {
+    flex: 4;
+    text-align: left;
+    display: flex;
+    position: relative;
+    min-height: 15px;
+}
+
+.nav-item-text>span {
+    font-size: 19px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+nav svg {
+    height: 30px;
+    width: 47px;
+}
+
+#user-info {
+    display: flex;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.user-info-image-wrapper {
+    flex: 1;
+}
+
+.user-info-image-wrapper>img {
+    width: 37px;
+    height: 37px;
+}
+
+#user-info svg {
+    height: 1.25em;
+    width: 1.25em;
+}
+
+.user-info-body {
+    flex: 3;
+}
+
+.user-info-arrow-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    vertical-align: text-bottom;
+}
+
+.user-info-arrow-wrapper>svg {
+    flex: 1;
+}
+
+#tweet-button {
+    background-color: rgba(29, 161, 242, 1.00);
+    color: white;
+    /* display: flex; */
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 20px;
+}
+
+main {
+    flex: 3;
+    display: flex;
+}
+
+#center-section {
+    flex: 3;
+}
+
+#heading {
+    font-size: 19px;
+}
+
+#tweet-box {
+    display: flex;
+}
+
+#avatar-wrapper {
+    flex: 1;
+}
+
+#input-wrapper {
+    flex: 6;
+}
+
+#input-wrapper>textarea {
+    width: 100%;
+    height: 100px;
+    border: none;
+}
+
+#tweet-box-bar {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+#tweet-box-bar svg {
+    width: 1.5em;
+    height: 1.5em;
+    padding-top: 5px;
+    /* padding-right: 5px; */
+    flex: 1;
+}
+
+.empty {
+    flex: 5;
+    align-self: flex-end;
+}
+
+#tweet-box-bar>.tweet-button-small {
+    flex: 2;
+    align-self: flex-end;
+    text-align: center;
+    background-color: rgba(29, 161, 242, 1.00);
+    /*blue*/
+    color: white;
+}
+
+#tweets {
+    padding-top: 15px;
+}
+
+.tweet {
+    width: 100%;
+    display: flex;
+}
+
+.tweet-side {
+    flex: 1;
+}
+
+.tweet-side>img {
+    height: 49px;
+    width: 49px;
+    border-radius: 50%;
+}
+
+.tweet-body {
+    flex: 8;
+}
+
+.tweeter-name {}
+
+.tweeter-id {
+    font-weight: normal;
+    color: rgb(101, 119, 134);
+}
+
+.tweet-time {
+    font-weight: normal;
+    color: rgb(101, 119, 134);
+}
+
+.tweet-content {
+    font-weight: normal;
+}
+
+.tweet-image-wrapper {
+    width: 100%;
+}
+
+.tweet-image {
+    height: 379px;
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border: 1px solid rgb(204, 214, 221);
+}
+
+.tweet-image-desc-wrapper {
+    padding-top: 5px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: 1px solid rgb(204, 214, 221);
+}
+
+.tweet-image-desc {}
+
+.tweet-image-desc-header {
+    font-weight: normal;
+}
+
+.tweet-image-desc-content {
+    font-weight: normal;
+    color: rgb(101, 119, 134);
+}
+
+.tweet-image-desc-origin {
+    color: rgb(101, 119, 134);
+}
+
+.tweet-image-desc-origin>svg {
+    width: 1.25em;
+    height: 1.25em;
+    fill: rgb(101, 119, 134);
+}
+
+#right-section {
+    flex: 2;
+    margin-right: 10px;
+}
+
+#search-box {
+    display: flex;
+    background-color: rgb(230, 236, 240);
+    /* padding-top: 5px; */
+    /* padding-bottom: 5px; */
+    border-radius: 9999px;
+}
+
+.mag-glass-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.mag-glass-wrapper>svg {
+    padding-left: 10px;
+    min-width: 30px;
+    height: 1.25em;
+    flex: 1;
+    vertical-align: text-bottom;
+    display: inline-block;
+    vertical-align: text-bottom;
+    position: relative;
+}
+
+.search-input-box-wrapper {
+    flex: 1;
+}
+
+#search-input {
+    border: none;
+    width: 100%;
+    background-color: rgb(230, 236, 240);
+    padding: 10px;
+    border-radius: 9999px;
+}
+
+.side-box {
+    background-color: rgb(245, 248, 250);
+    margin-top: 10px;
+}
+
+.side-header, .side-footer {
+    line-height: 1.3125;
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(230, 236, 240);
+    font-size: 19px;
+    padding: 10px 15px 10px 15px;
+}
+
+.side-item {
+    padding: 10px 15px 10px 15px;
+    font-size: 15px;
+    display: flex;
+}
+
+.side-item-image {
+    border-radius: 12px;
+    width: 100%;
+    height: 100%;
+}
+
+.side-item-body {
+    flex: 5;
+}
+
+.side-item-image-wrapper {
+    flex: 1;
+}
+
+.side-item-body-title {}
+
+.side-footer {
+    font-weight: normal;
+    font-size: 15px;
+    color: rgba(29, 161, 242, 1.00);
+    /*blue*/
+}
+
+.to-follow {
+    display: flex;
+}
+
+.to-follow-image-wrapper {
+    flex: 1;
+}
+
+.to-follow-body {
+    flex: 5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.to-follow-content {
+    flex: 3;
+}
+
+.to-follow-button-wrapper {
+    flex: 1;
+}
+
+.to-follow-image-wrapper>img {
+    width: 47px;
+    height: 47px;
+}
+
+.to-follow-button {
+    color: rgba(29, 161, 242, 1.00);
+    border: 1px solid rgba(29, 161, 242, 1.00);
+    border-radius: 9999px;
+    display: flex;
+}
+
+.to-follow-button>span {
+    flex: 1;
+    text-align: center;
+    font-size: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 </style>

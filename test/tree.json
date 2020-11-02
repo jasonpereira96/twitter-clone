@@ -1,0 +1,19 @@
+{
+    "root": {
+        "navigation": {
+            "Navbar": 1,
+            "NavItem": 1,
+            "UserInfo": 1
+        },
+        "MainSection": 1,
+        "TweetBox": 1,
+        "Tweet": 1,
+        "aside": {
+            "items": {
+                "HappeningItem": 1,
+                "FollowItem": 1
+            },
+            "SideBox": 1
+        }
+    }
+}
