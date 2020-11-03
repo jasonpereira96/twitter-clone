@@ -482,6 +482,7 @@ main {
 
 .action:hover.green svg {
     background-color: #ddf2e7;
+    fill: #51dc90;
 }
 .action:hover.green .action-number {
     color: #51dc90;
@@ -489,6 +490,7 @@ main {
 
 .action:hover.red svg {
     background-color: #f5dde6;
+    fill: #f15d95;
 }
 .action:hover.red .action-number {
     color: #f15d95;
