@@ -32,10 +32,9 @@ html, body, #app {
 }
 body {
     background-color: white;
-    -ms-overflow-style: scrollbar;
-    overflow-y: scroll;
     overscroll-behavior-y: none;
     font-weight: bold;
+    margin: 0px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
 }
 
@@ -82,7 +81,7 @@ svg {
 
 header {
     flex: 1;
-    overflow-y: auto;
+    overflow-y: scroll;
     position: relative;
 }
 #header-icon-wrapper {
@@ -498,6 +497,7 @@ main {
 
 #right-section {
     flex: 2;
+    margin-top: 10px;
     margin-right: 10px;
     padding-left: 30px; 
     padding-right: 15px; 
@@ -572,9 +572,10 @@ main {
     padding-right: 10px;
 }
 .side-item-body-content {
+    padding-top: 5px;
 }
 .side-item-body-title span {
-    padding-left: 5px; 
+    padding-right: 5px; 
 }
 .side-item-image-wrapper {
     flex: 1;
