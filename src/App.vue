@@ -23,7 +23,13 @@ html, body, #app {
     height: 100%;
     width: 100%;
 }
-
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+#app {
+    overflow: hidden;
+}
 body {
     background-color: white;
     -ms-overflow-style: scrollbar;
@@ -53,6 +59,26 @@ svg {
 .circle {
     border-radius: 50%;
 }
+.blue-hover {
+    border-radius: 9999px;
+    transition-property: background-color;
+    transition-duration: 0.2s;
+    padding: 10px;
+}
+.blue-hover:hover {
+    color: rgba(29, 161, 242, 1.00);
+    background-color: rgba(29,161,242,0.1);
+    cursor: pointer;
+}
+.button-hover {
+    transition-property: background-color;
+    transition-duration: 0.2s;
+}
+.button-hover:hover {
+    background-color: #2883de; /*darker blue*/
+    cursor: pointer;
+}
+
 
 header {
     flex: 1;
@@ -69,26 +95,52 @@ header {
 
 .nav-item {
     display: flex;
-    padding: 10px;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
+.nav-item-cover {
+    padding: 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9999px;
+    transition-property: background-color;
+    transition-duration: 0.2s;
+}
+.nav-item-cover:hover {
+    color: rgba(29, 161, 242, 1.00);
+    background-color: rgba(29,161,242,0.1);
+    cursor: pointer;
+}
+
+.nav-item-cover:hover .nav-item-svg {
+    fill: rgba(29, 161, 242, 1.00);
+}
+.nav-item-cover2 {
+    flex: 1;
+    display: flex;
+}
 .nav-svg-wrapper {
     flex: 1;
 }
 
+.nav-svg-wrapper > svg {
+    fill: black;
+}
+
 .nav-item-text {
-    flex: 4;
+    flex: 1;
     text-align: left;
-    display: flex;
-    position: relative;
     min-height: 15px;
+    padding-top: 5px;
 }
 
 .nav-item-text>span {
     font-size: 19px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    padding-right: 10px;
 }
 
 nav svg {
@@ -134,28 +186,76 @@ nav svg {
 .user-info-arrow-wrapper>svg {
     flex: 1;
 }
-
+#tweet-button-wrapper {
+}
 #tweet-button {
     background-color: rgba(29, 161, 242, 1.00);
     color: white;
-    /* display: flex; */
-    text-align: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    /* text-align: center; */
+    /* padding-top: 10px; */
+    /* padding-bottom: 10px; */
+    border-radius: 9999px;
+    min-height: 49px;
+    align-items:center;
+    justify-content: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    cursor: pointer;
+    /*TODO hover background color*/
+}
+#tweet-button:hover {
+    background-color: #2883de;
 }
 
 main {
     flex: 3;
     display: flex;
+    overflow-y: scroll;
 }
 
 #center-section {
     flex: 3;
+    margin-right: 0px;
+    margin-left: 0px;
+    border-top-width: 0px;
+    border-right-width: 1px;
+    border-left-width: 1px;
+    border-color: rgb(230, 236, 240);
+    border-style: solid;
+    overflow-y: scroll;
 }
 
+#heading, #tweet-box {
+    padding-left: 15px;
+    padding-right: 15px;
+}
 #heading {
     font-size: 19px;
+    height: 53px;
+    position: sticky;
+    top: 0px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(230, 236, 240);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+#home {
+    flex: 9999;
+}
+#sparkle-wrapper {
+    flex: 1;
+}
+#sparkle-wrapper:hover{
+
+}
+#heading svg {
+    height: 1.5em;
+    width: 1.5em;
 }
 
 #tweet-box {
@@ -164,16 +264,28 @@ main {
 
 #avatar-wrapper {
     flex: 1;
+    padding-top: 5px;
 }
 
 #input-wrapper {
     flex: 6;
+    padding-top: 5px;
 }
 
 #input-wrapper>textarea {
     width: 100%;
     height: 100px;
-    border: none;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(230, 236, 240);
+    border-bottom-style: solid;
+    font-size: 1.5em;
+}
+
+#input-wrapper>textarea::placeholder {
+    /* font-size: 1.5em; */
 }
 
 #tweet-box-bar {
@@ -202,17 +314,26 @@ main {
     background-color: rgba(29, 161, 242, 1.00);
     /*blue*/
     color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 9999px;
 }
 
 #tweets {
     padding-top: 15px;
+    padding-right: 35px;
 }
 
 .tweet {
     width: 100%;
     display: flex;
+    padding-left: 15px;
 }
-
+.official-svg {
+    height: 1.25em;
+}
 .tweet-side {
     flex: 1;
 }
@@ -227,21 +348,28 @@ main {
     flex: 8;
 }
 
+.tweet-content {
+    font-weight: normal;
+}
+
 .tweeter-name {}
 
 .tweeter-id {
     font-weight: normal;
     color: rgb(101, 119, 134);
+    margin-left: 5px;
 }
 
 .tweet-time {
     font-weight: normal;
     color: rgb(101, 119, 134);
+    margin-left: 5px;
+}
+.tweeter-dot {
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
-.tweet-content {
-    font-weight: normal;
-}
 
 .tweet-image-wrapper {
     width: 100%;
@@ -283,9 +411,48 @@ main {
     fill: rgb(101, 119, 134);
 }
 
+.action-bar {
+    display:flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.action {
+    flex: 1;
+    /* display: flex; */
+    /* line-height: 1.3125px; */
+    justify-content: flex-start;
+}
+.action-cover {
+    /* flex: 1; */
+    width: fit-content;
+    display: flex;
+}
+.action-icon-wrapper {
+    flex: 1;
+}
+.action-icon-wrapper > svg {
+    height: 1.25em;
+}
+.action-number {
+    flex: 1;
+    font-size: 13px;
+    padding-left: 10px;
+    padding-right: 10px;
+    vertical-align: bottom;
+    text-align: bottom;
+    position: relative;
+}
+.action-number > span {
+    position:absolute;
+    bottom: 8px;
+}
+
 #right-section {
     flex: 2;
     margin-right: 10px;
+    padding-left: 30px; 
+    padding-right: 15px; 
+    overflow-y: scroll;
 }
 
 #search-box {

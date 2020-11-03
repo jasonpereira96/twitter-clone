@@ -14,8 +14,8 @@
                 <NavItem v-for="nav in navs" :itemId="nav" :key="nav"/>
             </nav>
             <div id='tweet-button-wrapper'>
-                <div id='tweet-button'>
-                    Tweet
+                <div id='tweet-button' class='button-hover'>
+                    <span>Tweet</span>
                 </div>
             </div>
         </div>

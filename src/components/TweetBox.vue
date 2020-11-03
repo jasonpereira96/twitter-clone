@@ -1,28 +1,26 @@
 <template>
     <div id='tweet-box'>
-        <div id='avatar-wrapper'></div>
+        <div id='avatar-wrapper'>
+            <img src='https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png' class='circle'/>
+        </div>
         <div id='input-wrapper'>
             <textarea placeholder="What's happening?"></textarea>
             <div id='tweet-box-bar'>
-                <svg viewBox="0 0 24 24" v-for="icon in icons" :key="icon.name">
-                    <g>
-                        <path :d="icon.path" />        
-                    </g>
-                </svg>
+                <SvgBase v-for="icon in icons" :name="icon.name" :key="icon.name" class='blue-hover'/>
                 <span class='empty'></span>
-                <span class='tweet-button-small'>Tweet</span>
+                <span class='tweet-button-small button-hover'>Tweet</span>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import svg from './../constants/svg';
+import SvgBase from './icons/SvgBase';
 
 export default {
     data() {
         let icons = [
-            'image',
+            'image_icon',
             'gif',
             'poll',
             'emoji',
@@ -32,10 +30,12 @@ export default {
             icons: icons.map(icon => {
                 return {
                     name: icon,
-                    path: svg[icon].path
                 };
             })
         };
+    },
+    components: {
+        SvgBase
     }
 }
 </script>
