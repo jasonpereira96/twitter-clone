@@ -11,7 +11,7 @@
         </div>
         <div class='nav-wrapper'>
             <nav>
-                <NavItem v-for="nav in navs" :itemId="nav" :key="nav"/>
+                <NavItem v-for="(nav, index) in navs" :itemId="nav" :key="nav" :active="index === 0"/>
             </nav>
             <div id='tweet-button-wrapper'>
                 <div id='tweet-button' class='button-hover'>

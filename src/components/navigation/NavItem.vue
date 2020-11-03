@@ -1,9 +1,9 @@
 <template>
-    <div class="nav-item">
+    <div :class="active ? 'nav-item active' : 'nav-item'">
         <div class='nav-item-cover'>
             <div class='nav-item-cover2'>
                 <div class="nav-svg-wrapper">
-                    <SvgBase :name="itemId" class='nav-item-svg' />
+                    <SvgBase :name="itemId" class="nav-item-svg"/>
                 </div>
                 <div class='nav-item-text'>
                     <span>{{itemTitle}}</span>
@@ -18,7 +18,8 @@ import SvgBase from './../icons/SvgBase';
 
 export default {
     props: [
-        'itemId'
+        'itemId',
+        'active'
     ],
 
     computed: {

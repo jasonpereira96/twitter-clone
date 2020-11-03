@@ -97,6 +97,13 @@ header {
     flex-direction: column;
     align-items: flex-start;
 }
+.nav-item.active span {
+    color: rgba(29, 161, 242, 1.00); 
+}
+
+.nav-item.active svg {
+    fill: rgba(29, 161, 242, 1.00); 
+}
 
 .nav-item-cover {
     padding: 10px;
