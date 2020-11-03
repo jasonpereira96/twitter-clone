@@ -40,10 +40,18 @@
                             <div class='action-number'><span>14.1K</span></div>
                         </div>
                     </div>
-                    <div class='action'>
+                    <div class='action green'>
                         <div class='action-cover'>
                             <div class='action-icon-wrapper'>
-                                <SvgBase name='reply' />
+                                <SvgBase name='comment'/>
+                            </div>
+                            <div class='action-number'><span>14.1K</span></div>
+                        </div>
+                    </div>
+                    <div class='action red'>
+                        <div class='action-cover'>
+                            <div class='action-icon-wrapper'>
+                                <SvgBase name='heart'/>
                             </div>
                             <div class='action-number'><span>14.1K</span></div>
                         </div>
@@ -51,15 +59,7 @@
                     <div class='action'>
                         <div class='action-cover'>
                             <div class='action-icon-wrapper'>
-                                <SvgBase name='reply' />
-                            </div>
-                            <div class='action-number'><span>14.1K</span></div>
-                        </div>
-                    </div>
-                    <div class='action'>
-                        <div class='action-cover'>
-                            <div class='action-icon-wrapper'>
-                                <SvgBase name='reply' />
+                                <SvgBase name='send' />
                             </div>
                             <div class='action-number'><span>14.1K</span></div>
                         </div>

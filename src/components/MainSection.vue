@@ -8,8 +8,11 @@
                 </div>
             </div>
             <TweetBox />
+            <div class='breaker'></div>
             <div id='tweets'>
-                <Tweet v-for="tweet in tweets" :key="tweet.id" :tweetData="tweet"/>
+                <div class='tweet-wrapper' v-for="tweet in tweets" :key="tweet.id">
+                    <Tweet :tweetData="tweet" :key="tweet.id"/>
+                </div>
             </div>
         </div>
         <Aside /> 
