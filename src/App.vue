@@ -337,6 +337,10 @@ main {
     display: flex;
     padding-top: 15px;
 }
+.tweet-wrapper:hover {
+    background-color: #edf0f2;
+    cursor: pointer;
+}
 .tweet {
     width: 100%;
     display: flex;
@@ -345,6 +349,7 @@ main {
     padding-right: 15px;
     border-bottom: 1px solid rgb(230, 236, 240);
 }
+
 .official-svg {
     height: 1.25em;
 }
@@ -557,21 +562,31 @@ main {
     font-size: 15px;
     display: flex;
 }
-
-.side-item-image {
-    border-radius: 12px;
-    width: 100%;
-    height: 100%;
+.side-item:hover {
+    background-color: #edf0f2;
+    cursor: pointer;
 }
 
 .side-item-body {
-    flex: 5;
+    flex: 3;
+    padding-right: 10px;
 }
-
+.side-item-body-content {
+}
+.side-item-body-title span {
+    padding-left: 5px; 
+}
 .side-item-image-wrapper {
     flex: 1;
+    display: flex;
+    justify-content: center;
 }
 
+.side-item-image {
+    border-radius: 12px;
+    width: 69px;
+    height: 69px;
+}
 .side-item-body-title {}
 
 .side-footer {
