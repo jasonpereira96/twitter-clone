@@ -6,7 +6,9 @@
         <div id='input-wrapper'>
             <textarea placeholder="What's happening?"></textarea>
             <div id='tweet-box-bar'>
-                <SvgBase v-for="icon in icons" :name="icon.name" :key="icon.name" class='blue-hover'/>
+                <div class='tweet-box-svg-wrapper'>
+                    <SvgBase v-for="icon in icons" :name="icon.name" :key="icon.name" class='blue-hover'/>
+                </div>
                 <span class='empty'></span>
                 <span class='tweet-button-small button-hover'>Tweet</span>
             </div>

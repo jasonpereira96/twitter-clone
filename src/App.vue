@@ -23,6 +23,9 @@ html, body, #app {
     height: 100%;
     width: 100%;
 }
+html {
+    font-size: 15px;
+}
 ::-webkit-scrollbar {
     width: 0px;
     background: transparent; /* make scrollbar transparent */
@@ -60,9 +63,8 @@ svg {
 }
 .blue-hover {
     border-radius: 9999px;
-    transition-property: background-color;
-    transition-duration: 0.2s;
     padding: 10px;
+    transition: background-color 0.5s ease;
 }
 .blue-hover:hover {
     color: rgba(29, 161, 242, 1.00);
@@ -90,8 +92,11 @@ header {
 #header-icon-wrapper>svg {
     height: 30px;
     width: 47px;
+    padding-left: 10px;
 }
-
+.nav-wrapper {
+    padding-left: 20px;
+}
 .nav-item {
     display: flex;
     flex-direction: column;
@@ -113,8 +118,7 @@ header {
     justify-content: center;
     align-items: center;
     border-radius: 9999px;
-    transition-property: background-color;
-    transition-duration: 0.2s;
+    transition: background-color 0.5s ease;
 }
 .nav-item-cover:hover {
     color: rgba(29, 161, 242, 1.00);
@@ -135,6 +139,8 @@ header {
 
 .nav-svg-wrapper > svg {
     fill: black;
+    height: 1.75rem;
+    width: 1.75rem;
 }
 
 .nav-item-text {
@@ -147,6 +153,7 @@ header {
 .nav-item-text>span {
     font-size: 19px;
     padding-right: 10px;
+    margin-left: 20px;
 }
 
 nav svg {
@@ -156,11 +163,11 @@ nav svg {
 
 #user-info {
     display: flex;
-    padding: 10px;
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
+    padding: 10px 10px 10px 30px;
 }
 
 .user-info-image-wrapper {
@@ -239,6 +246,7 @@ main {
 }
 #tweet-box {
     padding-bottom: 10px;
+    padding-top: 10px;
 }
 #heading {
     font-size: 19px;
@@ -259,6 +267,7 @@ main {
 }
 #sparkle-wrapper {
     flex: 1;
+    font-size: 15px;
 }
 #sparkle-wrapper:hover{
 
@@ -295,7 +304,7 @@ main {
 }
 
 #input-wrapper>textarea::placeholder {
-    /* font-size: 1.5em; */
+    font-size: 19px;
 }
 
 #tweet-box-bar {
@@ -305,10 +314,16 @@ main {
     padding-top: 10px;
 }
 
+.tweet-box-svg-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5px;
+}
+
 #tweet-box-bar svg {
     width: 1.5em;
     height: 1.5em;
-    padding-top: 5px;
     /* padding-right: 5px; */
     flex: 1;
 }
@@ -344,7 +359,7 @@ main {
     padding-top: 15px;
 }
 .tweet-wrapper:hover {
-    background-color: #edf0f2;
+    background-color: #f7f7f7;
     cursor: pointer;
 }
 .tweet {
@@ -358,6 +373,8 @@ main {
 
 .official-svg {
     height: 1.25em;
+    vertical-align: text-bottom;
+    margin-left: 2px;
 }
 .tweet-side {
     flex: 1;
@@ -378,6 +395,9 @@ main {
 }
 
 .tweeter-name {}
+.tweet-heading:hover > .tweeter-name {
+    text-decoration: underline;
+}
 
 .tweeter-id {
     font-weight: normal;
@@ -388,11 +408,13 @@ main {
 .tweet-time {
     font-weight: normal;
     color: rgb(101, 119, 134);
-    margin-left: 5px;
+    /* margin-left: 5px; */
 }
 .tweeter-dot {
     padding-left: 5px;
     padding-right: 5px;
+    font-weight: normal;
+    color: rgb(101, 119, 134);
 }
 
 
@@ -451,6 +473,9 @@ main {
     /* line-height: 1.3125px; */
     justify-content: flex-start;
     color: rgb(101, 119, 134); /*light*/ 
+}
+.action svg, .action .action-number {
+    transition: background-color 0.5s ease;
 }
 .action-cover {
     /* flex: 1; */
@@ -571,7 +596,7 @@ main {
     font-size: 15px;
     display: flex;
 }
-.side-item:hover {
+.side-item:hover, .side-footer:hover {
     background-color: #edf0f2;
     cursor: pointer;
 }
@@ -602,8 +627,8 @@ main {
 .side-footer {
     font-weight: normal;
     font-size: 15px;
-    color: rgba(29, 161, 242, 1.00);
-    /*blue*/
+    color: rgba(29, 161, 242, 1.00); /*blue*/
+    cursor: pointer;
 }
 
 .to-follow {
