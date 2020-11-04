@@ -1,5 +1,9 @@
 # twitter-clone
 
+A clone of the Twitter web interface built with Vue JS.
+Demo at http://righteous-sack.surge.sh/
+
+
 ## Project setup
 ```
 npm install
