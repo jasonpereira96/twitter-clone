@@ -541,9 +541,10 @@ main {
 #search-box {
     display: flex;
     background-color: rgb(230, 236, 240);
-    /* padding-top: 5px; */
-    /* padding-bottom: 5px; */
+    padding-top: 5px;
+    padding-bottom: 5px;
     border-radius: 9999px;
+    margin-bottom: 20px;
 }
 
 .mag-glass-wrapper {
