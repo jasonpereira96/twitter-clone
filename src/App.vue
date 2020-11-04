@@ -84,7 +84,10 @@ svg {
 header {
     flex: 1;
     overflow-y: scroll;
-    position: relative;
+    /* justify-content: space-between; */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 #header-icon-wrapper {
   padding: 10px;
@@ -161,13 +164,29 @@ nav svg {
     width: 47px;
 }
 
+#user-info-wrapper {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    /* padding: 10px 0px 10px 20px; */
+    /* margin-left: 10px; */
+    /* margin-right: 10px; */
+    /* max-height: 35px; */
+    /* margin-top: auto; */
+    justify-content: center;
+}
+.user-info-cover {
+    display:flex;
+    flex : 1;
+    align-items: flex-end;
+    padding-left: 20px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
 #user-info {
     display: flex;
-    position: absolute;
-    bottom: 0;
-    left: 0;
     width: 100%;
-    padding: 10px 10px 10px 30px;
+    max-height: 40px;
 }
 
 .user-info-image-wrapper {
